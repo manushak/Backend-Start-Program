@@ -1,0 +1,120 @@
+/*
+Տրված է տող։ Տպել տողի մեջ մտնող բոլոր փոքրատառերը։
+*/
+function printStringLowercases(str) {
+    for (let letter of str) {
+        if (letter === letter.toLowerCase()) {
+            console.log(letter);
+        }
+    }
+}
+
+printStringLowercases("dfsSDFAereDFD");
+
+
+
+/*
+Տրված է ամբողջ թվերի հաջորդականություն։ Տպել այդ հաջորդականության դրական և կենտ տարրերի քանակը։
+*/
+function printOddPositiveNumbersCount(arr) {
+    let count = 0;
+    for (let item of arr) {
+        if (item >= 0 && item % 2 === 1) {
+            count ++;
+        }
+        
+    }
+    console.log(count);
+}
+
+printOddPositiveNumbersCount([-4, 3, 8, 2, -5, 9, 0, 5, 10, 7]);
+
+
+/*
+Տրված է իրական թվերի հաջորդականություն։ Տպել այդ հաջորդականության մեծագույն տարրը և նրա կարգահամարը (index)։
+*/
+
+function printMaxNumberAndIndex(arr) {
+    let max = Math.max(...arr);
+    let index = arr.indexOf(max);
+    console.log(`max number: ${max}, index of max number: ${index}`);
+}
+
+printMaxNumberAndIndex([9, -2, 3/4, 0, 40, 100/2, 34]);
+
+
+
+/*
+Գրել ֆունկցիա, որն արգումենտում ստանում է տող և վերադարձնում այդ տողի երկարությունը։
+*/
+function getStringLength(str) {
+    return str.length;
+}
+
+getStringLength("mississippi");
+
+
+/*
+Տրված զանգվածի համար հաշվել զանգվածի էլեմենտների միջին թվաբանականը։
+*/
+function getArrayAverageArithmetic(arr) {
+    let sum = 0;
+    
+    for (item of arr) {
+        sum += item;
+    }
+
+    let average = sum / arr.length;
+    return average;
+}
+
+getArrayAverageArithmetic([7, 34 ,54, 23, 21, 1]);
+
+
+
+/*
+Գրել ծրագիր, որը զանգվածի բացասական էլեմենտները կտանի աջ կողմ, իսկ դրականները՝ ձախ
+*/
+function orderArrayBySign(arr) {
+    let positiveNumbers = arr.filter((item) => item >= 0);
+    let negativeNumbers = arr.filter((item) => item < 0);
+    let orderedArray = positiveNumbers.concat(negativeNumbers);
+
+    return orderedArray;
+}
+
+orderArrayBySign([8, 4, -3, 2, -4, -2, 65, -45, 0]);
+
+
+
+
+/*
+Գրել ծրագիր, որը էկրանին կտպի զանգվածում ամենաշատը հանդիպած թիվը։
+*/
+function printMostFrequentNumber(arr) {
+    let mostRepeattedNumber = {};
+
+    for (let item of arr) {
+        if (mostRepeattedNumber[item]) {
+            mostRepeattedNumber[item] ++;
+        } else {
+            mostRepeattedNumber[item] = {};
+            mostRepeattedNumber[item] = 1;
+        }
+    }
+
+    let max = Math.max(...Object.values(mostRepeattedNumber));
+
+    for(let item in mostRepeattedNumber) {
+        if (mostRepeattedNumber[item] === max) {
+           console.log(item);
+        }
+    }
+}
+
+printMostFrequentNumber([4, 5, 2, 2, 4, 2, 6, 3]);
+
+
+
+
+
